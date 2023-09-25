@@ -48,13 +48,13 @@ WORKDIR /directus
 
 EXPOSE 8055
 
-# ENV \
-# 	DB_CLIENT="pg" \
-# 	DB_FILENAME="/directus/database/database.sqlite" \
-# 	EXTENSIONS_PATH="/directus/extensions" \
-# 	STORAGE_LOCAL_ROOT="/directus/uploads" \
-# 	NODE_ENV="production" \
-# 	NPM_CONFIG_UPDATE_NOTIFIER="false"
+ENV \
+	DB_CLIENT="pg" \
+	DB_SSL__REJECT_UNAUTHORIZED="false" \
+	EXTENSIONS_PATH="/directus/extensions" \
+	STORAGE_LOCAL_ROOT="/directus/uploads" \
+	NODE_ENV="production" \
+	NPM_CONFIG_UPDATE_NOTIFIER="false"
 
 COPY --from=builder --chown=node:node /directus/dist .
 
