@@ -5,7 +5,7 @@ export default defineEndpoint(
 		id: 'web3',
 		handler: (router) =>
 		{
-			router.get('/', (_req, res) => res.send('Hello, World!'))
+			router.get('/address', (_req, res) => res.send('Hello, World!'))
 		}
 	}
 )
